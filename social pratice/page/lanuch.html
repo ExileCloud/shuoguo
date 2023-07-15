@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html style="background-size: cover;height: 100%;width: 100%;">
+	<head style="width: 100%;height: 100%;">
+		<meta charset="utf-8">
+		<title>待定</title>
+		<link href="../css/lanuch.css" type="text/css" rel="stylesheet"/>
+		
+	</head>
+	<body>
+		<form id=tickon >
+			<input id=inputcount type="text" />
+			<input class=inputpassword type="text"/>
+		</form>
+		<var ></var>
+		<div id=petdiv draggable="false" ondragstart="return false" oncontextmenu="return false">
+			<span id=pet draggable="false" oncontextmenu="return 0">
+			</span>
+		</div>
+		<ul>
+			<li id=li1 ></li>
+		</ul>
+		
+		<div id=div1></div>
+	</body>
+	
+	<script src="../js/pythics.js" type="text/javascript"></script>
+		<script >
+		var world0=new world(document.body);
+		var it=new item();
+		world0.additem(it);
+		var petdiv=document.getElementById("petdiv");
+		var pet=document.getElementById("pet");
+		var sx=0;
+		var sy=0;
+		var isdown=false;
+		
+		petdiv.addEventListener('mousedown',(ev)=>{
+			if(ev.button==0){
+			isdown=true;
+			}
+			sx=ev.x-(petdiv.style.left.replace('px',' '));
+			sy=ev.y-(petdiv.style.top.replace('px',' '));
+					})
+		document.body.addEventListener('mousemove',(ev)=>{
+			if(isdown){
+			petdiv.style.left=ev.x-sx+'px';
+			petdiv.style.top=ev.y-sy+'px';
+			}
+		})
+		document.body.addEventListener('mouseup',(ev)=>{
+			if(isdown){
+			var dx=ev.x-sx<0 ?0 : ev.x-sx;
+			var dy=ev.y-sy<0 ?0 : ev.y-sy;
+			dx=dx>document.body.offsetWidth-petdiv.offsetWidth ?
+			 document.body.offsetWidth-petdiv.offsetWidth :dx;
+			 dy=dy>document.body.offsetHeight-petdiv.offsetHeight ?
+			  document.body.offsetHeight-petdiv.offsetHeight : dy;
+			petdiv.style.left=dx+'px';
+			petdiv.style.top=dy+'px';
+			sx=0;sy=0;
+			if(petdiv.style.top<0){
+				petdiv.style.top=0;
+			}
+			if(petdiv.style.top>document.body.offsetHeight-petdiv.offsetHeight){
+				pet.style.top=document.body.offsetHeight-petdiv.offsetHeight;
+			}
+			isdown=false;
+			}
+		})
+		document.body.addEventListener('mouseleave',(ev)=>{
+			if(isdown){
+			var dx=ev.x-sx<0 ?0 : ev.x-sx;
+			var dy=ev.y-sy<0 ?0 : ev.y-sy;
+			dx=dx>document.body.offsetWidth-petdiv.offsetWidth ?
+			 document.body.offsetWidth-petdiv.offsetWidth :dx;
+			 dy=dy>document.body.offsetHeight-petdiv.offsetHeight ?
+			  document.body.offsetHeight-petdiv.offsetHeight : dy;
+			petdiv.style.left=dx+'px';
+			petdiv.style.top=dy+'px';
+			sx=0;sy=0;
+			isdown=false;
+			}
+		})
+	</script>
+</html>
