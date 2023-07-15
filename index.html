@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html draggable="false">
+	<head >
+		<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<link href="../css/main.css" type="text/css" rel="stylesheet"/>
+		<style>
+			body{
+				width: 100%;
+			}
+			*{
+				box-sizing: border-box;
+			}
+			#hui{
+				position: absolute;
+				left: 1px;
+				top: 0px;
+				width: 58.6px;
+				height: inherit;
+				border-width:2px ;
+				border-color: #297090;
+				border-radius: 1px;
+				animation: randt 15s ease-in-out 0.5s infinite;
+			}
+			#hui:hover{
+				animation-play-state: paused;
+			}
+			@keyframes randt{
+				0%{
+					left: 0px;
+					rotate: 0deg;
+				}
+				35%{
+					left: 95.5%;
+					rotate: 720deg;
+				}
+				50%{
+					left: 95.5%;
+					rotate: 720deg;
+				}
+				80%{
+					left: 0px;
+					rotate: 0deg;
+				}
+				100%{
+					left: 0px;
+					rotate: 0deg;
+				}
+			}
+			.zi{
+				z-index: -1;
+				transition-property: all;
+				transition-duration: 800ms;
+				 
+			}
+			a{
+				color: #ffffff;
+				text-decoration: none;
+				
+			}
+			ul{
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+			}
+			li a{
+				display: inherit;
+				color:black;
+				opacity: 50%;
+			}
+			li a:hover{
+				cursor: pointer;
+			}
+			ul li{
+				display: none;
+				transition: all 800ms;
+				margin: 0;
+				padding: 0;
+			}
+			ul:hover>li{
+				display: block;
+			}
+			
+			.listmenu{
+				position: absolute;
+				width: 16%;
+				height: 96%;
+				transition: all 800ms;
+			}
+			.listmenu:hover{
+				height: 500%;
+				background-color: rgba(22, 21, 24, 0.4);
+			}
+			.menudot{
+				width: 100%;
+				height: 55.59px;
+			}
+			.menudot:hover{
+				background-color: #ffaa00;
+			}
+			.onShow{
+				scale: 100%;
+				width: 60%;
+				height: 100%;
+				border-style: solid;
+				border-width: 1px;
+				border-color:black;
+			}
+			.onHide{
+				scale: 30%;
+				width: 60%;
+				height: 100%;
+				border-style: solid;
+				border-width: 1px;
+				border-color:black;
+			}
+			.gunbar{
+				position: relative;
+				left:1px;
+				animation: lTOr 8000ms linear 900ms;
+			}
+			@keyframes lTor {
+				from{
+					left: 0%;
+				}
+				to{
+					left: 100%;
+				}
+			}
+			
+		</style>
+		<title>硕果长鲜实践团</title>
+	</head>
+	<body>
+		<canvas id=can style="position: absolute;width: 98%;height: 90%;
+		top: 10%;margin: 0;padding: 0;box-sizing: border-box;">
+			
+		</canvas>
+		<div id=welcome style="position: absolute;left: 0px;top: 0px;width: 100%;
+		height: 59.7px;transform-style: preserve-3d;background-color: aliceblue; " title="
+		硕果长鲜实践团是.......
+		">
+		<div id=hui style="z-index: 1;" title="本队徽....">
+			<img src="../img/队徽.png" style="position: absolute;left: 0px;top: 0px;z-index: 1;
+			width: 100%;height: 100%;" draggable="false"/>
+		</div>
+		<div class=zi style="width: 5%;position: absolute;left: 35%;font-size: 40px;">
+			 硕
+		</div>
+		<div class=zi style="width: 5%;position: absolute;left: 45%;font-size: 40px;">
+			 果
+		</div>
+		<div class=zi style="width: 5%;position: absolute;left: 55%;font-size: 40px;">
+			 长
+		</div>
+		<div class=zi style="width: 5%;position: absolute;left: 65%;font-size: 40px;">
+			 鲜
+		</div>
+
+		</div>
+		<div id=menubar style="position: absolute;left: 15%;top: 59.7px;width: 70%;height: 8%;
+		background-color: #55aaff;opacity: 90%;border-radius: 6px;
+		border-width: 1.2px;border-style: solid;z-index: 1;" draggable="false">
+		
+			<div class=gunbar style="position: absolute;left: 37.5%;top: 25%;height: 50%;
+			width: 25%;background-color: rgba(0, 0, 0, 0.15);overflow: hidden;border-radius: 5px;">
+				<p style="position:relative;top:-12px;white-space: nowrap;"> 吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱在</p>
+			</div>
+			
+			<div class=listmenu style="left: 2%;top: 2%;text-align: center;overflow: hidden;"> 
+				<a href="first.html" style="font-size: 20px;text-align: center;
+				line-height: 250%;opacity: 100% !important;">
+					首页
+				</a>
+				<div class=menudot style="left: 2%;text-align: center;">
+					<a href="first.html" style="font-size: 18px;text-align: center;
+					line-height: 250%;">
+						待定1
+					</a>
+				</div>
+				<div class=menudot style="left: 2%;text-align: center;">
+					<a href="first.html" style="font-size: 18px;text-align: center;
+					line-height: 250%;">
+						待定2
+					</a>
+				</div>
+				<div class=menudot style="left: 2%;text-align: center;">
+					<a href="first.html" style="font-size: 18px;text-align: center;
+					line-height: 250%;">
+						待定3
+					</a>
+				</div>
+				<div class=menudot style="left: 2%;text-align: center;">
+					<a href="first.html" style="font-size: 18px;text-align: center;
+					line-height: 250%;">
+						待定4
+					</a>
+				</div>
+			</div>
+			
+			<div class=listmenu style="left: 20%;top: 2%;text-align: center;overflow: hidden;">
+				<a href="first.html" style="font-size: 20px;text-align: center;
+				line-height: 250%;opacity: 100% !important;">
+					资讯
+				</a>
+				<div class=menudot style="left: 2%;text-align: center;">
+					<a href="first.html" style="font-size: 18px;text-align: center;
+					line-height: 250%;">
+						撒大苏打
+					</a>
+				</div>
+				<div class=menudot style="left: 2%;text-align: center;">
+					<a href="first.html" style="font-size: 18px;text-align: center;
+					line-height: 250%;">
+						威武
+					</a>
+				</div>
+				<div class=menudot style="left: 2%;text-align: center;">
+					<a href="first.html" style="font-size: 18px;text-align: center;
+					line-height: 250%;">
+						大苏打的
+					</a>
+				</div>
+				<div class=menudot style="left: 2%;text-align: center;">
+					<a href="first.html" style="font-size: 18px;text-align: center;
+					line-height: 250%;">
+						硕果长鲜
+					</a>
+				</div>
+			</div>
+			
+			<div class=listmenu style="left: 64%;top: 2%;text-align: center;overflow: hidden;">
+				<a href="first.html" style="font-size: 20px;text-align: center;
+				line-height: 250%;opacity: 100% !important;">
+					首页
+				</a>
+				<div class=menudot style="left: 2%;text-align: center;">
+					<a href="first.html" style="font-size: 18px;text-align: center;
+					line-height: 250%;">
+						待定1
+					</a>
+				</div>
+				<div class=menudot style="left: 2%;text-align: center;">
+					<a href="first.html" style="font-size: 18px;text-align: center;
+					line-height: 250%;">
+						待定2
+					</a>
+				</div>
+				<div class=menudot style="left: 2%;text-align: center;">
+					<a href="first.html" style="font-size: 18px;text-align: center;
+					line-height: 250%;">
+						待定3
+					</a>
+				</div>
+				<div class=menudot style="left: 2%;text-align: center;">
+					<a href="first.html" style="font-size: 18px;text-align: center;
+					line-height: 250%;">
+						待定4
+					</a>
+				</div>
+			</div>
+			
+			<div class=listmenu style="left: 82%;top: 2%;text-align: center;overflow: hidden;">
+				<a href="first.html" style="font-size: 20px;text-align: center;
+				line-height: 250%;opacity: 100% !important;">
+					首页
+				</a>
+				<div class=menudot style="left: 2%;text-align: center;">
+					<a href="first.html" style="font-size: 18px;text-align: center;
+					line-height: 250%;">
+						待定1
+					</a>
+				</div>
+				<div class=menudot style="left: 2%;text-align: center;">
+					<a href="first.html" style="font-size: 18px;text-align: center;
+					line-height: 250%;">
+						待定2
+					</a>
+				</div>
+				<div class=menudot style="left: 2%;text-align: center;">
+					<a href="first.html" style="font-size: 18px;text-align: center;
+					line-height: 250%;">
+						待定3
+					</a>
+				</div>
+				<div class=menudot style="left: 2%;text-align: center;">
+					<a href="first.html" style="font-size: 18px;text-align: center;
+					line-height: 250%;">
+						待定4
+					</a>
+				</div>
+			</div>
+			
+		</div>
+		<div id=showbar style="position: absolute;overflow: hidden;width:70% ;height: 40%;left: 15%;top:119.61px;
+		border-width: 2px;border-radius: 5px;
+		border-color: #ffaa00;border-style: solid;z-index: 0;">
+			<div class=onShow></div>
+		</div>
+	</body>
+	<script>
+		function Rand(min,max,wei){
+			return Math.floor((Math.random()*(max-min)+min)*Math.pow(10,wei))/Math.pow(10,wei);
+		}
+		var can=document.getElementById('can');
+		can.width=can.offsetWidth;
+		can.height=can.offsetHeight;
+		var canvas=can.getContext('2d');
+		class atom{
+			constructor(px,py,plen,prot,pspeed){
+				this.x=px;
+				this.y=py;
+				this.len=plen;
+				this.rot=prot;
+				this.speed=pspeed;
+			}
+			draw(){
+				canvas.moveTo(this.x,this.y);
+				canvas.lineTo(this.x+len*Math.cos(this.rot),this.y-len*Math.sin(this.rot));
+			}
+		}
+		var atoms=[];
+		for(let i=0;i<50;i++){
+			atoms.push(new atom(Rand(0,can.width-5,1),500,Rand(2,8,1),Rand(-3.14,3.14,2),Rand(1,4,2)));
+		}
+		canvas.lineWidth=0.5;
+		canvas.strokeStyle="#5151f3";
+		var hui=document.getElementById('hui');
+		var zis=document.getElementsByClassName('zi');
+		setInterval(()=>{
+			console.log(zis[0].offsetLeft);
+			for(let i=0;i<zis.length;i++){
+				if(Math.abs(zis[i].offsetLeft-hui.offsetLeft)<100){
+					zis[i].style.scale="40%";
+					zis[i].style.top="18%";
+				}
+				else{
+					zis[i].style.scale="100%";
+					zis[i].style.top="0%";
+				}
+			}
+		},1000/60);
+		/*setInterval(()=>{
+			canvas.clearRect(0,0,can.width,can.height);
+			canvas.beginPath();
+			atoms.forEach((a)=>{
+				console.log(a);
+				
+			canvas.moveTo(a.x,a.y);
+			canvas.lineTo(a.x+a.len*Math.cos(a.rot),a.y-a.len*Math.sin(a.rot));
+			canvas.stroke();
+			a.y-=a.speed;
+			a.rot+=Rand(-0.05,0.05,3);
+			a.x+=Rand(-0.2,0.2,4);
+			if(a.y<0){
+				a.y=600;
+				a.x=Rand(0,can.width-5,1);
+			}
+			})
+			
+		},1000/40)*/
+	</script>
+</html>
