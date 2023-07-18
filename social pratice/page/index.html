@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html draggable="false" >
+	<head >
+		<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<link rel="icon" href="../img/队徽.png"/>
+		<link href="../css/main.css" type="text/css" rel="stylesheet"/>
+		<style>
+			body{
+				width: 100%;
+			}
+			*{
+				box-sizing: border-box;
+			}
+			#can{
+				transition: all 900ms;
+				opacity: 30%;
+			}
+			#can:hover{
+				opacity: 100%;
+			}
+			#hui{
+				position: absolute;
+				left: 1px;
+				top: 0px;
+				width: 58.6px;
+				height: inherit;
+				border-width:2px ;
+				border-color: #297090;
+				border-radius: 1px;
+				animation: randt 15s ease-in-out 0.5s infinite;
+			}
+			#hui:hover{
+				animation-play-state: paused;
+			}
+			@keyframes |randt{
+				0%{
+					left: 0px;
+					rotate: 0deg;
+					offset-rotate: 720deg;
+				}
+				35%{
+					left: 95.5%;
+					rotate: 720deg;
+				}
+				50%{
+					left: 95.5%;
+					rotate: 720deg;
+				}
+				80%{
+					left: 0px;
+					rotate: 0deg;
+				}
+				100%{
+					left: 0px;
+					rotate: 0deg;
+				}
+			}
+			.zi{
+				z-index: -1;
+				transition-property: all;
+				transition-duration: 800ms;
+				 
+			}
+			a{
+				color: #ffffff;
+				text-decoration: none;
+				
+			}
+			ul{
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+			}
+			li a{
+				display: inherit;
+				color:black;
+				opacity: 50%;
+			}
+			li a:hover{
+				cursor: pointer;
+			}
+			ul li{
+				display: none;
+				transition: all 800ms;
+				margin: 0;
+				padding: 0;
+			}
+			ul:hover>li{
+				display: block;
+			}
+			
+			.listmenu{
+				position: absolute;
+				width: 16%;
+				height: 54.29px;
+				transition: all 600ms;
+			}
+			.listmenu:hover{
+				height: 268.203px;
+				background-color: rgba(22, 21, 24, 0.4);
+			}
+			.menudot{
+				width: 100%;
+				height: 55.59px;
+			}
+			.listmenu:hover > .menudot{
+				display: block;
+			}
+			.menudot:hover{
+				background-color: #ffaa00;
+			}
+			.onShow{
+				scale: 100%;
+				width: 60%;
+				height: 100%;
+				border-style: solid;
+				border-width: 1px;
+				border-color:black;
+			}
+			.onHide{
+				scale: 30%;
+				width: 60%;
+				height: 100%;
+				border-style: solid;
+				border-width: 1px;
+				border-color:black;
+			}
+			.gunbar{
+				position: relative;
+				left:1px;
+				
+			}
+			:root{
+			}
+			.gun{
+				position: relative;
+				animation: lTor 20s linear 0s infinite;
+				width: fit-content;
+			}
+			.gun:hover{
+				animation-play-state: paused;
+			}
+			@keyframes lTor {
+				from{
+					transform: translateX(172.22px);
+				}
+				to{
+					transform: translateX(-100%);
+				}
+			}
+		</style>
+		<title>硕果长鲜实践团</title>
+	</head>
+	<body>
+		<canvas id=can style="position: absolute;width: 98%;height: 90%;
+		top: 10%;margin: 0;padding: 0;box-sizing: border-box;">
+			
+		</canvas>
+		<div id=welcome style="position: absolute;left: 0px;top: 0px;width: 100%;
+		height: 59.7px;transform-style: preserve-3d;background-color: aliceblue; " title="
+		硕果长鲜实践团是.......
+		">
+		<div id=hui style="z-index: 1;" title="本队徽....">
+			<img src="../img/队徽.png" style="position: absolute;left: 0px;top: 0px;z-index: 1;
+			width: 100%;height: 100%;" draggable="false"/>
+		</div>
+		<div class=zi style="width: 5%;position: absolute;left: 35%;font-size: 40px;">
+			 硕
+		</div>
+		<div class=zi style="width: 5%;position: absolute;left: 45%;font-size: 40px;">
+			 果
+		</div>
+		<div class=zi style="width: 5%;position: absolute;left: 55%;font-size: 40px;">
+			 长
+		</div>
+		<div class=zi style="width: 5%;position: absolute;left: 65%;font-size: 40px;">
+			 鲜
+		</div>
+
+		</div>
+		<div id=menubar style="position: absolute;left: 15%;top: 59.7px;width: 70%;height: 58.5547px;
+		background-color: #55aaff;opacity: 90%;border-radius: 6px;
+		padding: 0;margin: 0;
+		border-width: 1px;border-style: solid;z-index: 1;" draggable="false">
+		
+			<div class=gunbar style="position: absolute;left: 37.5%;top: 25%;height: 50%;
+			width: 25%;background-color: rgba(0, 0, 0, 0.15);
+			overflow: hidden;border-radius: 5px;">
+				<p class=gun style="position:relative;top:-12px;white-space: nowrap;"> 
+				君不见黄河之水天上来，奔流到海不复回。
+				君不见高堂明镜悲白发，朝如青丝暮成雪。
+				人生得意须尽欢，莫使金樽空对月。
+				天生我材必有用，千金散尽还复来。
+				烹羊宰牛且为乐，会须一饮三百杯。
+				岑夫子，丹丘生，将进酒，杯莫停。
+				与君歌一曲，请君为我倾耳听。
+				钟鼓馔玉不足贵，但愿长醉不愿醒。
+				古来圣贤皆寂寞，惟有饮者留其名。
+				陈王昔时宴平乐，斗酒十千恣欢谑。
+				主人何为言少钱，径须沽取对君酌。
+				五花马、千金裘，呼儿将出换美酒，与尔同销万古愁。
+				
+				汉皇重色思倾国，御宇多年求不得。
+				
+				杨家有女初长成，养在深闺人未识。
+				
+				天生丽质难自弃，一朝选在君王侧。
+				
+				回眸一笑百媚生，六宫粉黛无颜色。
+				
+				春寒赐浴华清池，温泉水滑洗凝脂。
+				
+				侍儿扶起娇无力，始是新承恩泽时。
+				
+				云鬓花颜金步摇，芙蓉帐暖度春宵。
+				
+				春宵苦短日高起，从此君王不早朝。
+				
+				承欢侍宴无闲暇，春从春游夜专夜。
+				
+				后宫佳丽三千人，三千宠爱在一身。
+				
+				金屋妆成娇侍夜，玉楼宴罢醉和春。
+				
+				姊妹弟兄皆列土，可怜光彩生门户。
+				
+				遂令天下父母心，不重生男重生女。
+				
+				骊宫高处入青云，仙乐风飘处处闻。
+				
+				缓歌慢舞凝丝竹，尽日君王看不足。
+				
+				渔阳鼙鼓动地来，惊破霓裳羽衣曲。
+				
+				九重城阙烟尘生，千乘万骑西南行。
+				
+				翠华摇摇行复止，西出都门百余里。
+				
+				六军不发无奈何，宛转蛾眉马前死。
+				
+				花钿委地无人收，翠翘金雀玉搔头。
+				
+				君王掩面救不得，回看血泪相和流。
+				
+				黄埃散漫风萧索，云栈萦纡登剑阁。
+				
+				峨嵋山下少人行，旌旗无光日色薄。
+				
+				蜀江水碧蜀山青，圣主朝朝暮暮情。
+				
+				行宫见月伤心色，夜雨闻铃肠断声。
+				
+				天旋地转回龙驭，到此踌躇不能去。
+				
+				马嵬坡下泥土中，不见玉颜空死处。
+				
+				君臣相顾尽沾衣，东望都门信马归。
+				
+				归来池苑皆依旧，太液芙蓉未央柳。
+				
+				芙蓉如面柳如眉，对此如何不泪垂。
+				
+				春风桃李花开夜，秋雨梧桐叶落时。
+				
+				西宫南苑多秋草，落叶满阶红不扫。
+				
+				梨园弟子白发新，椒房阿监青娥老。
+				
+				夕殿萤飞思悄然，孤灯挑尽未成眠。
+				
+				迟迟钟鼓初长夜，耿耿星河欲曙天。
+				
+				鸳鸯瓦冷霜华重，翡翠衾寒谁与共。
+				
+				悠悠生死别经年，魂魄不曾来入梦。
+				
+				临邛道士鸿都客，能以精诚致魂魄。
+				
+				为感君王辗转思，遂教方士殷勤觅。
+				
+				排空驭气奔如电，升天入地求之遍。
+				
+				上穷碧落下黄泉，两处茫茫皆不见。
+				
+				忽闻海上有仙山，山在虚无缥渺间。
+				
+				楼阁玲珑五云起，其中绰约多仙子。
+				
+				中有一人字太真，雪肤花貌参差是。
+				
+				金阙西厢叩玉扃，转教小玉报双成。
+				
+				闻道汉家天子使，九华帐里梦魂惊。
+				
+				揽衣推枕起徘徊，珠箔银屏迤逦开。
+				
+				云鬓半偏新睡觉，花冠不整下堂来。
+				
+				风吹仙袂飘飖举，犹似霓裳羽衣舞。
+				
+				玉容寂寞泪阑干，梨花一枝春带雨。
+				
+				含情凝睇谢君王，一别音容两渺茫。
+				
+				昭阳殿里恩爱绝，蓬莱宫中日月长。
+				
+				回头下望人寰处，不见长安见尘雾。
+				
+				惟将旧物表深情，钿合金钗寄将去。
+				
+				钗留一股合一扇，钗擘黄金合分钿。
+				
+				但令心似金钿坚，天上人间会相见。
+				
+				临别殷勤重寄词，词中有誓两心知。
+				
+				七月七日长生殿，夜半无人私语时。
+				
+				在天愿作比翼鸟，在地愿为连理枝。
+				
+				天长地久有时尽，此恨绵绵无绝期。
+				</p>
+			</div>
+			
+			<div class=listmenu style="left: 2%;top: 2%;text-align: center;overflow: hidden;"> 
+				<a href="first.html" style="font-size: 20px;text-align: center;
+				line-height: 250%;opacity: 100% !important;">
+					首页
+				</a>
+				<div class=menudot style="left: 2%;text-align: center;">
+					<a href="first.html" style="font-size: 18px;text-align: center;
+					line-height: 250%;">
+						待定1
+					</a>
+				</div>
+				<div class=menudot style="left: 2%;text-align: center;">
+					<a href="first.html" style="font-size: 18px;text-align: center;
+					line-height: 250%;">
+						待定2
+					</a>
+				</div>
+				<div class=menudot style="left: 2%;text-align: center;">
+					<a href="first.html" style="font-size: 18px;text-align: center;
+					line-height: 250%;">
+						待定3
+					</a>
+				</div>
+				<div class=menudot style="left: 2%;text-align: center;">
+					<a href="first.html" style="font-size: 18px;text-align: center;
+					line-height: 250%;">
+						待定4
+					</a>
+				</div>
+			</div>
+			
+			<div class=listmenu style="left: 20%;top: 2%;text-align: center;overflow: hidden;">
+				<a href="first.html" style="font-size: 20px;text-align: center;
+				line-height: 250%;opacity: 100% !important;">
+					资讯
+				</a>
+				<div class=menudot style="left: 2%;text-align: center;">
+					<a href="jinri.html" style="font-size: 18px;text-align: center;
+					line-height: 250%;">
+						近日新闻
+					</a>
+				</div>
+				<div class=menudot style="left: 2%;text-align: center;">
+					<a href="first.html" style="font-size: 18px;text-align: center;
+					line-height: 250%;">
+						水果专栏
+					</a>
+				</div>
+				<div class=menudot style="left: 2%;text-align: center;">
+					<a href="first.html" style="font-size: 18px;text-align: center;
+					line-height: 250%;">
+						大苏打的
+					</a>
+				</div>
+				<div class=menudot style="left: 2%;text-align: center;">
+					<a href="first.html" style="font-size: 18px;text-align: center;
+					line-height: 250%;">
+						硕果长鲜
+					</a>
+				</div>
+			</div>
+			
+			<div class=listmenu style="left: 64%;top: 2%;text-align: center;overflow: hidden;">
+				<a href="first.html" style="font-size: 20px;text-align: center;
+				line-height: 250%;opacity: 100% !important;">
+					产品
+				</a>
+				<div class=menudot style="left: 2%;text-align: center;">
+					<a href="baoxiandian.html" style="font-size: 18px;text-align: center;
+					line-height: 250%;">
+						保鲜垫
+					</a>
+				</div>
+				<div class=menudot style="left: 2%;text-align: center;">
+					<a href="first.html" style="font-size: 18px;text-align: center;
+					line-height: 250%;">
+						待定2
+					</a>
+				</div>
+				<div class=menudot style="left: 2%;text-align: center;">
+					<a href="first.html" style="font-size: 18px;text-align: center;
+					line-height: 250%;">
+						待定3
+					</a>
+				</div>
+				<div class=menudot style="left: 2%;text-align: center;">
+					<a href="first.html" style="font-size: 18px;text-align: center;
+					line-height: 250%;">
+						待定4
+					</a>
+				</div>
+			</div>
+			
+			<div class=listmenu style="left: 82%;top: 2%;text-align: center;overflow: hidden;">
+				<a href="first.html" style="font-size: 20px;text-align: center;
+				line-height: 250%;opacity: 100% !important;">
+					关于我们
+				</a>
+				<div class=menudot style="left: 2%;text-align: center;">
+					<a href="first.html" style="font-size: 18px;text-align: center;
+					line-height: 250%;">
+						团队介绍
+					</a>
+				</div>
+				<div class=menudot style="left: 2%;text-align: center;">
+					<a href="JiLu.html" style="font-size: 18px;text-align: center;
+					line-height: 250%;">
+						起步之路
+					</a>
+				</div>
+				<div class=menudot style="left: 2%;text-align: center;">
+					<a href="first.html" style="font-size: 18px;text-align: center;
+					line-height: 250%;">
+						更多信息
+					</a>
+				</div>
+				<div class=menudot style="left: 2%;text-align: center;">
+					<a href="first.html" style="font-size: 18px;text-align: center;
+					line-height: 250%;">
+						待定4
+					</a>
+				</div>
+			</div>
+			
+		</div>
+		<div id=showbar style="position: absolute;overflow: hidden;width:70% ;height: 40%;left: 15%;top:119.61px;
+		border-width: 2px;border-radius: 5px;
+		border-color: #ffaa00;border-style: solid;z-index: 0;">
+			<div class=onShow></div>
+		</div>
+		<div id=toolbar style="position: absolute;left: 1%;top:64px;width:13%;height:50%;
+		background-color: #e8e7de;border-style: ridge;border-radius: 6px;
+		border-width: 3;border-color: black;cursor: move;"></div>
+	</body>
+	<script>
+		function Rand(min,max,wei){
+			return Math.floor((Math.random()*(max-min)+min)*Math.pow(10,wei))/Math.pow(10,wei);
+		}
+		
+		function drawcurve(start,end,curveness,percent,color,length){
+			length*=1.2;
+			canvas.beginPath();
+			canvas.strokeStyle=color;
+			
+			cp=[
+				(start[0]+end[0])/2-(start[1]-end[1])*curveness,
+				(start[1]+end[1])/2+(start[0]-end[0])*curveness
+			]
+			var t=percent/100;
+			if(t<0){
+				t=0;
+			}
+			var p0=start;
+			var p1=cp;
+			var p2=end;
+			
+			var v01=[p1[0]-p0[0],p1[1]-p0[1]];
+			var v12=[p2[0]-p1[0],p2[1]-p1[1]];
+			
+			var q0=[p0[0]+v01[0]*t,p0[1]+v01[1]*t];
+			var q1=[p1[0]+v12[0]*t,p1[1]+v12[1]*t];
+			
+			var v=[q1[0]-q0[0],q1[1]-q0[1]];
+			
+			var sb=[q0[0]+v[0]*(t-length),q0[1]+v[1]*(t-length)];
+			var b=[q0[0]+v[0]*t,q0[1]+v[1]*t];
+			
+			var gin=canvas.createLinearGradient(sb[0],sb[1],b[0],b[1]);
+			gin.addColorStop(0,'rgba(0,0,0,0)');
+			gin.addColorStop(1,color);
+			canvas.strokeStyle=gin;
+			
+			canvas.moveTo(p0[0],p0[1]);
+			canvas.quadraticCurveTo(
+					q0[0],q0[1],
+					b[0],b[1]
+			);
+			canvas.lineWidth=1.5;
+			canvas.stroke();
+		}
+		var can=document.getElementById('can');
+		can.width=can.offsetWidth;
+		can.height=can.offsetHeight;
+		var canvas=can.getContext('2d');
+		class atom{
+			constructor(spoint,curve,color){
+				this.spoint=spoint;
+				this.curve=curve;
+				this.color=color;
+				this.progress=0;
+				this.speed=Rand(0,1,2);
+				this.rot=Rand(-3.14,3.14,2);
+				this.epoint=[spoint[0]+Rand(500,600,2)*Math.cos(this.rot),
+				spoint[1]+Rand(500,600,2)*Math.sin(this.rot)
+				];
+			}
+		}
+		var atoms=[];
+		for(let i=0;i<20;i++){
+			atoms.push(new atom([Rand(0,can.width,1),Rand(0,can.height,1)],
+			Rand(-1,1,2),
+			"#a62aff"
+			));
+		}
+		canvas.lineWidth=0.5;
+		canvas.strokeStyle="#5151f3";
+		var hui=document.getElementById('hui');
+		var zis=document.getElementsByClassName('zi');
+		setInterval(()=>{
+			for(let i=0;i<zis.length;i++){
+				if(Math.abs(zis[i].offsetLeft-hui.offsetLeft)<100){
+					zis[i].style.scale="40%";
+					zis[i].style.top="18%";
+				}
+				else{
+					zis[i].style.scale="100%";
+					zis[i].style.top="0%";
+				}
+			}
+			canvas.fillStyle="#98eef7";
+			canvas.fillRect(0,0,can.width,can.height);
+			atoms.forEach((a)=>{
+				drawcurve(a.spoint,a.epoint,a.curve,a.progress,a.color,Rand(0.1,0.11,3));
+				a.progress+=a.progress>100.0 ? -1*a.progress:0.5;
+				if(a.progress>100.0){
+					a.progress=0;
+					a.rot=Rand(-3.14,3.14,2);
+					a.speed=Rand(0,1,2);
+					a.spoint=[Rand(0,can.width,1),Rand(0,can.height,1)];
+					a.curve=Rand(0,1,2);
+					a.length=Rand(0.1,0.2,3)
+				}else{
+					a.progress+=a.speed*0.1;
+				}
+			})
+		},1000/120);
+		
+		var gun=document.getElementsByClassName('gun');
+		for(let i=0;i<gun.length;i++){
+			console.log();
+			gun[i].style.animationDuration=gun[i].innerHTML.length/8+'s';
+		}
+		can.addEventListener('click',(ev)=>{
+			var clickatoms=[];
+			for(let i=0;i<6;i++){
+				clickatoms.push(new atom([ev.clientX,ev.clientY],
+				Rand(-1,1,2),
+				"#a62aff"
+				));
+				clickatoms[i].rot=-3.14+6.28*(1/6.0);
+			}
+			var clickAtom=(function(clickatoms){
+				for(var i=0;i<6;i++){
+					if(clickatoms[i].progress<=100){
+						drawcurve(clickatoms[i].spoint,clickatoms[i].epoint,clickatoms[i].curve,clickatoms[i].progress
+						,"#ff0000",1);
+						clickatoms[i].progress+=0.02;
+						
+					}
+					else{
+						cancelAnimationFrame(window.requestAnimationFrame(clickAtom));
+					}
+				}
+				 window.requestAnimationFrame(clickAtom);
+			})(clickatoms);
+			window.requestAnimationFrame(clickAtom);
+		});
+		setInterval(()=>{/*
+			canvas.fillStyle="#cecec7";
+			canvas.fillRect(0,0,can.width,can.height);
+			canvas.beginPath();
+			atoms.forEach((a)=>{
+				console.log(a);
+				
+			canvas.moveTo(a.x,a.y);
+			canvas.lineTo(a.x+a.len*Math.cos(a.rot),a.y-a.len*Math.sin(a.rot));
+			canvas.stroke();
+			a.y-=a.speed;
+			a.rot+=Rand(-0.05,0.05,3);
+			a.x+=Rand(-0.2,0.2,4);
+			if(a.y<0){
+				a.y=600;
+				a.x=Rand(0,can.width-5,1);
+			}
+			})*/
+		
+		},1000/40)
+	</script>
+</html>
