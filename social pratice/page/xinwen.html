@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<title>今日新闻</title>
+		<style>
+			body{
+				user-select: none;
+			}
+			a{
+				color:inherit;
+				text-decoration: none;
+				
+			}
+			#robar{
+				position: relative;
+				transition: all 500ms;
+				left: 0px;
+			}
+			#newsbar{
+				
+			}
+			.texta{
+				filter: brightness(0.5);
+			}
+			.texta:hover{
+				filter: brightness(1.2);
+			}
+			#daohang{
+				position: fixed;
+				left: 0;
+				top: 0;
+				width: 1450px;
+				box-sizing: content-box;
+				height: 100px;
+				margin: 0;
+				padding: 0;
+				border: black 0.5px solid;
+				background-image: linear-gradient(to bottom,white,#dedede,white);
+				animation: Out 800ms ease-out 100ms 1 forwards;
+				transform: translateY(-80px);
+				z-index: 10;
+			}
+			.swip-wrap{
+				overflow: hidden;
+				width: 750px;
+				height: 500px;
+				position: relative;
+				top: 100px;
+				left: 40px;
+				background-color: antiquewhite;
+			}
+			.pic{
+				overflow: hidden;
+				display: inline-block;
+				float: left;
+				width: 750px;
+				height: 500px;
+				margin: 0;
+				padding: 0;
+			}
+			.picimg{
+				position: relative;
+				min-height: 500px;
+				max-height: 500px;
+				||clip-path:polygon(0 0px,750px 0px,375px 500px);
+				text-align: center;
+				transition: all 500ms;
+			}
+			.imga{
+				text-align: center;
+				max-width: 750px;
+				max-height: 500px;
+				overflow: hidden;
+			}
+			.imga div{
+				color: white;
+				font-size: 16px;
+				position: relative;
+				width: 750px;
+				height: 50px;
+				transition: all 500ms;
+				background-color: rgba(1,2,3,0.6);
+				top: 0px;
+				line-height: 40px;
+				text-align: center;
+				align-content: center;
+			}
+			.imga:hover > img{
+				scale: 1.15;
+				filter: brightness(0.8);
+			}
+			.imga:hover > div{
+				top: -50px;
+			}
+			@keyframes Out{
+				from{
+					transform: translateY(-80px);
+				}
+				to{
+					transform: translateY(0);
+				}
+			}
+			.ldiv{
+				display: inline-block;
+			}
+		</style>
+	</head>
+	<body>
+		<div id=daohang>
+			<div class="ldiv" style="width: 60px;height:60px;background-color: cornflowerblue;
+			position: relative;left: -30px;top: -50px;
+			transform: rotateZ(45deg);"></div>
+			<div class="ldiv" style="width: 80px;height: 80px;max-width: 75px;">
+				<img src="../img/队徽.png" style="max-width: 75px;margin-top: 10px;" draggable="false"/>
+			</div>
+			<span style="position: relative;top: -25px;">
+				<a class="texta" href="xinwen.html" style="font-size: 20px;position: relative;
+				color: cornflowerblue;">
+					硕果长鲜实践团新闻网
+				</a>
+				<a class="texta" href="index.html" style="font-size: 24px;position: relative;
+				color: cornflowerblue;left: 500px;">
+					首页
+				</a>
+				<div style="width: 1px;height: 25px;background-color: #999999;
+				position: relative;left: 920px;top: -27px;">
+					
+				</div>
+			</span>
+		</div>
+		<div class="swip-wrap">
+			<div id=robar>
+			</div>
+		</div>
+		<div id=newsbar >
+			<div style="position: relative;">
+				
+			</div>
+		</div>
+	</body>
+	<script>
+		function getData(url){
+			var request=new XMLHttpRequest();
+			request.open('get',url,false);
+			request.send(null);
+			return JSON.parse(request.responseText);
+		}	
+		var bar=document.getElementById('robar');
+		bar.style.height="500px";
+		var data=getData("../ShuJu/wechat.json").site;
+		for(var i=0;i<data.length;i++){
+			if(data[i].describe==""){
+				break;
+			}
+			var pdiv=document.createElement('div');
+			pdiv.className="pic";
+			var pa=document.createElement('a');
+			pa.href=data[i].url;
+			pa.className="imga";
+			pa.target="_blank";
+			var pimg=document.createElement('img');
+			pimg.className="picimg";
+			pimg.src=data[i].src;
+			pimg.alt=data[i].describe;
+			var ppdiv=document.createElement('div');
+			ppdiv.innerHTML=data[i].describe;
+			pa.append(pimg);
+			pa.append(ppdiv);
+			pdiv.append(pa);
+			bar.append(pdiv);
+		}
+		
+		bar.style.width=750*document.getElementsByClassName('pic').length+"px";
+		var t1= setInterval(()=>{
+			if(bar.offsetLeft<=(-1*bar.offsetWidth+750)){
+				bar.style.left="0px";
+				bar.offsetLeft=0;
+			}
+			else{
+			bar.style.left=bar.offsetLeft-750+"px";
+				}
+		},1000);
+	</script>
+</html>

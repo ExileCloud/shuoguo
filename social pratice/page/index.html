@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<link rel="icon" href="../img/队徽.png"/>
+		<style>
+			head{
+				-webkit-user-drag: none;
+				user-select: none;
+				-webkit-user-select: none;
+				
+			}
+			body{
+				-webkit-user-drag: none;
+				user-select: none;
+				-webkit-user-select: none;
+				width: 100%;
+				height: 100%;
+				background-repeat: no-repeat;
+				background-size: cover;
+				overflow-x: hidden;
+				padding: 0;
+				margin: 0;
+			}
+			a{
+				color:inherit;
+				text-decoration: none;
+			}
+			.headdiv{
+				position: relative;
+				margin: 0px;
+				padding: 0px;
+				box-sizing: content-box;
+				width: 1440px;
+				height: 50px;
+				padding-top: 14px;
+				padding-bottom: 14px;
+				z-index: 1;
+				background-image: linear-gradient(to bottom,rgb(10,10,10,0.6),rgb(10,10,10,0.1));
+			}
+			.menu{
+				width: 100px;
+				height: 50px;
+				font-size: 22px;
+				overflow: hidden;
+				line-height: 32px;
+				transition: all 500ms;
+				text-align: center;
+				color: #fdfcfb;
+			}
+			.menu:hover{
+				/background-color:  rgb(10,10,10,0.9);
+				color: white;
+			}
+			.menuItem{
+				width: 100px;
+				height: 30px;
+				font-size: 16px;
+				text-align: center;
+				color: |#fdfcfb;
+				color: black;
+				background-color: |rgb(10,10,10,0.15);
+				background-color: #f1f1f1;
+				border-top: white 0.1px solid;
+			}
+			.menuItem:nth-child(2){
+				width: 100px;
+				height: 30px;
+				font-size: 16px;
+				text-align: center;
+				color: |#fdfcfb;
+				color: black;
+				background-color: |rgb(10,10,10,0.15);
+				background-color: #f1f1f1;
+				border: none;
+			}
+			.menuItem:hover{
+				background-color: |rgba(255, 255, 255, 1);
+				background-color: #000;
+				color: |black;
+				color: white;
+				font-size: 18px;
+				
+			}
+			#menu1{
+				position: absolute;
+				left: 400px;
+			}
+			#menu2{
+				position: absolute;
+				left: 550px;
+			}
+			#menu1:hover{
+				height: 120px;
+			}
+			#menu2:hover{
+				height: 120px;
+			}
+			#menu3{
+				position: absolute;
+				left: 700px;
+			}
+			#menu4{
+				position: absolute;
+				left: 850px;
+			}
+			#menu3:hover{
+				height: 120px;
+			}
+			#menu4:hover{
+				height: 180px;
+			}
+			.container{
+				z-index: -99;
+				width: 800px;
+				height: 500px;
+				overflow: hidden;
+				background-color: antiquewhite;
+			}
+			.headimg{
+				max-height: 250px;
+				display: inline-flex;
+				flex-wrap: nowrap;
+				transition: all 500ms;
+				filter: brightness(0.4);
+				object-fit: cover;
+			}
+			#imgbar{
+				top: 0px;
+			}
+			#imgbar:hover{
+				top: -50px;
+			}
+			.headimg:hover{
+				max-height: 300px;
+				filter: brightness(1.1);
+			}
+			.headimg:hover .headimg{
+				max-height: 300px;
+			}
+			.part{
+				width: 600px;
+				max-height: 500px;
+				animation: turn 5s linear 2s infinite ;
+			}
+			.belt{
+				max-height: 500px;
+				width: fit-content;
+				transition: all 500ms;
+			}
+		</style>
+		<title>硕果长鲜网</title>
+	</head>
+	<body style="background-color: #fdfcfb;scroll-behavior: smooth;scrollbar-3dlight-color: aliceblue;overflow-x: hidden;">
+		<div class="headdiv" >
+			<div class="menu" id=menu1 >
+				<div style="height: 50px;width: 100px;text-align: center;">首页</div>
+				<div class="menuItem">
+					<a >体验</a>
+				</div>
+				<div class="menuItem">
+					<a>待定</a>
+				</div>
+			</div>
+			<div class="menu" id=menu2 >
+				<div style="height: 50px;width: 100px;text-align: center;">资讯</div>
+				<div class="menuItem">
+					<a href="xinwen.html">近日新闻</a>
+				</div>
+				<div class="menuItem">
+					<a>待定</a>
+				</div>
+			</div>
+			<div class="menu" id=menu3 >
+				<div style="height: 50px;width: 100px;text-align: center;">产品</div>
+				<div class="menuItem">
+					<a href="baoxiandian.html">智能保鲜垫</a>
+				</div>
+				<div class="menuItem">
+					<a>待定</a>
+				</div>
+			</div>
+			<div class="menu" id=menu4 >
+				<div style="height: 50px;width: 100px;text-align: center;">关于我们</div>
+				<div class="menuItem">
+					<a href="JiLu.html">实践日常</a>
+				</div>
+				<div class="menuItem">
+					<a href="more_infor.html">团队介绍</a>
+				</div>
+				<div class="menuItem">
+					<a href="more_infor.html">更多</a>
+				</div>
+			</div>
+		</div>
+		<div id=imgbar style="position: relative;max-height: 300px;
+		z-index: 0;overflow-y:hidden;width: 2850px;height: fit-content;
+		float: left;transition: top 500ms;
+		">
+			<img src="../img/合影1.jpg" class="headimg" draggable="false"/>
+			<img src="../img/合影2.jpg" class="headimg" draggable="false"/>
+			<img src="../img/合影3.jpg" class="headimg" draggable="false"/>
+			<img src="../img/day1.jpg" class="headimg" draggable="false"/>
+			<img src="../img/合影4.jpg" class="headimg" draggable="false"/>
+			<img src="../img/day1-news-4.jpg" class="headimg" draggable="false"/>
+			<img src="../img/day1-news-3.jpg" class="headimg" draggable="false"/>
+		</div>
+		
+		<div class="container">
+			<div class="belt">
+				<div class="part">
+					
+				</div>
+			</div>
+		</div>
+	</body>
+	<script>
+		var headimg= document.getElementsByClassName('headimg');
+		var imgbar=document.getElementById('imgbar');
+		var px=0;
+		var isclick=false;
+		var dx=0;
+		imgbar.addEventListener('mousedown',(ev)=>{
+			px=ev.pageX;
+			isclick=true;
+		})
+		imgbar.addEventListener('mouseup',(ev)=>{
+			isclick=false;
+			dx=ev.pageX-px;
+			px=ev.pageX-px;
+		})
+		imgbar.addEventListener('mouseleave',(ev)=>{
+			isclick=false;
+			dx=ev.pageX-px;
+		})
+		imgbar.addEventListener('mousemove',(ev)=>{
+			if(isclick)
+			//imgbar.style.transform="translateX("+(dx+(ev.pageX-px))+"px)";
+			imgbar.style.transform="translateX("+(Number(imgbar.style.transform.replace("translateX(",'').replace("px)",''))
+			+ev.movementX)+"px)";
+		})
+		/*
+		for(let i=0;i<headimg.length;i++){
+			(function(i){
+				var isclick=false;
+				var px=0
+			headimg[i-1].addEventListener('mousedown',(ev)=>{
+				isclick=true;
+				px=ev.pageX;
+			});
+			headimg[i-1].addEventListener('mouseup',(ev)=>{
+				isclick=false;
+			});
+			headimg[i-1].addEventListener('mousemove',(ev)=>{
+				if(isclick){
+				imgbar.style.transform="translateX("+(ev.pageX-px)+"px)";
+				console.log(px-ev.pageX);
+				}
+			})
+			})(i+1);
+		}*/
+	</script>
+</html>

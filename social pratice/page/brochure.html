@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html style="height: 100%;margin: 0;padding: 0;">
+	<head>
+		<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<style>
+			.ye{
+				position: absolute;
+				width: 298px;
+				height: 404px;
+				display: inline-block;
+				transition: all 800ms;
+			}
+			.ye1:hover{
+				transform: rotateY(90deg);
+			}
+			.ye2{
+				position: relative;
+				width: 298px;
+				height: 404px;
+				display: inline-block;
+				transition: all 800ms;
+				transform-origin: left;
+			}
+			#tiao{
+				position: relative;
+				height: 404px;
+				transition: all 800ms;
+			}
+		</style>
+		<title>宣传手册</title>
+	</head>
+	<body style="height: 100%;margin: 0;padding: 0;">
+		<div id=tiao></div>
+	</body>
+	<script>
+		var brochures=[
+			"../img/brochure_1.png",
+			"../img/brochure_2.png",
+			"../img/brochure_3.png",
+			"../img/brochure_4.png",
+			"../img/brochure_5.png",
+			"../img/brochure_6.png",
+			"../img/brochure_7.png",
+			"../img/brochure_8.png"
+		];
+		var main=document.getElementById('tiao');
+		let c=0;
+		var front=[];
+		var back=[];
+		class BrochurePage{
+			constructor(n,fSrc,bSrc){
+				this.width=298;
+				this.height=404;
+				this.order=n;
+				this.fb=[
+					document.createElement('div'),
+					document.createElement('div')
+				]
+				this.Tstate={
+					on:"off",
+					off:"on"
+				};
+				this.state="off";
+				this.fb[0].className="ye";
+				this.fb[1].className="ye";
+				this.fb[0].backgroundImage='url(" ")'.replace(" ",fSrc);
+				this.fb[1].backgroundImage="url("+bSrc+")";
+				console.log(this.fb[0].backgroundImage);
+				this.fb[0].style.transformOrigin="right";
+				this.fb[1].style.transformOrigin="left";
+				this.fb[1].style.transfom="rotateY(180deg)";
+			}
+		turnPage(){
+			if(this.state=="off"){
+				this.fb[0].style.transform="rotateY(180deg)";
+				this.fb[1].style.transform="rotateY(0deg)";
+			}
+			else{
+				this.fb[0].style.transform="rotateY(0deg)";
+				this.fb[1].style.transform="rotateY(180deg)";
+			}
+		}
+		}
+		/*for(var i=0;i<brochures.length/2;i++){
+			front.push(document.createElement('div'));
+			front[i].className='ye1';
+			back.push(document.createElement('div'));
+			front[i].style.backgroundImage="url("+brochures[i]+")";
+			back[i].style.backgroundImage="url("+brochures[brochures.length-i]+")";
+		}*/
+		var dc=new BrochurePage(1, brochures[0],brochures[7]);
+		main.append(dc.fb[0]);
+		//for(let i=0;i<front.length;i++){
+		//	main.append(front[i]);
+			//main.append(back[i]);
+		//}
+		
+		function update(){
+			main.style.width=298*front.length+"px";
+			main.style.left=(document.body.offsetWidth-main.offsetWidth)/2+"px";
+			main.style.top=(document.body.offsetHeight-main.offsetHeight)/2+"px";
+			console.log(document.body.offsetHeight-main.offsetHeight);
+			requestAnimationFrame(update);
+		}
+		requestAnimationFrame(update);
+	</script>
+</html>

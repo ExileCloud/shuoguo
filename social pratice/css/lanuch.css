@@ -1,0 +1,129 @@
+body{
+	overflow: hidden;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+	background-image: linear-gradient(0deg,blue,white,blue);
+	animation: main 5s ease-in-out infinite;
+	transform: rotateZ(20deg) translateZ(80px);
+}
+#petdiv{
+	-webkit-user-drag: none;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 90px;
+	height: 93px;
+}
+#pet{
+	-webkit-user-drag: none;
+	position: absolute;
+	background-position: 9.5% 2.5%;
+	left: 0px;
+	overflow: hidden;
+	background-image: url('../img/images/shiam_14.png');
+	width: 90px;
+	height: 93px;
+	transition: transform 600ms;
+	animation: anm1 12s linear infinite;
+	transition: background-position 0s;
+}
+#pet:hover{
+	position: absolute;
+}
+
+#inputcount{
+	position: absolute;
+	left: 46%;
+	top: 30%;
+	width: 8%;
+	height: 5%;
+	outline: none;
+	border-color:#101010;
+	border-radius:20px;
+	transition: all 600ms;
+}
+#inputcount:hover{
+	left: 40%;
+	width: 20%;
+	background-color: #5cf7ff;
+	width: 20%;
+}
+
+#li1{
+	z-index: -1;
+	position: absolute;
+	top: 100%;
+	padding: 1%;
+	background-clip:content-box;
+	list-style: none;
+	width: 50px;
+	height: 50px;
+	border-radius: 25%;
+	background-clip: content-box;
+	transform-origin: 70%;
+	transform: rotateZ(0deg);
+	background-color: burlywood;
+	animation: lift1 3000ms ease-in-out 0s infinite;
+}
+#li1:hover{
+	animation-play-state: paused;
+}
+@keyframes main{
+	0% {transform: translateZ(10px) ;}
+	50% {transform: translateZ(-10px) ;}
+	100%{transform: translateZ(10px) ;}
+}
+@keyframes lift1 {
+	from{top:100%;transform: rotateZ(0deg);}
+	to{top: -10%;transform: rotateZ(275deg);}
+}
+@keyframes anm1 {
+0.0%,2.1%{background-image: url('../img/images/shiam_14.png');}
+2.1%,4.2%{background-image: url('../img/images/shiam_15.png');}
+4.2%,6.300000000000001%{background-image: url('../img/images/shiam_16.png');}
+6.300000000000001%,8.4%{background-image: url('../img/images/shiam_17.png');}
+8.4%,10.5%{background-image: url('../img/images/shiam_18.png');}
+10.5%,12.600000000000001%{background-image: url('../img/images/shiam_19.png');}
+12.600000000000001%,14.700000000000001%{background-image: url('../img/images/shiam_20.png');}
+14.700000000000001%,16.8%{background-image: url('../img/images/shiam_21.png');}
+16.8%,18.900000000000002%{background-image: url('../img/images/shiam_22.png');}
+18.900000000000002%,21.0%{background-image: url('../img/images/shiam_23.png');}
+21.0%,23.1%{background-image: url('../img/images/shiam_37.png');}
+23.1%,25.200000000000003%{background-image: url('../img/images/shiam_38.png');}
+25.200000000000003%,27.3%{background-image: url('../img/images/shiam_39.png');}
+27.3%,29.400000000000002%{background-image: url('../img/images/shiam_40.png');}
+29.400000000000002%,31.5%{background-image: url('../img/images/shiam_41.png');}
+31.5%,33.6%{background-image: url('../img/images/shiam_42.png');}
+33.6%,35.7%{background-image: url('../img/images/shiam_43.png');}
+35.7%,37.800000000000004%{background-image: url('../img/images/shiam_44.png');}
+37.800000000000004%,39.9%{background-image: url('../img/images/shiam_45.png');}
+39.9%,42.0%{background-image: url('../img/images/shiam_46.png');}
+42.0%,44.1%{background-image: url('../img/images/shiam_47.png');}
+44.1%,46.2%{background-image: url('../img/images/shiam_61.png');}
+46.2%,48.300000000000004%{background-image: url('../img/images/shiam_62.png');}
+48.300000000000004%,50.400000000000006%{background-image: url('../img/images/shiam_63.png');}
+50.400000000000006%,52.5%{background-image: url('../img/images/shiam_648.png');}
+52.5%,54.6%{background-image: url('../img/images/shiam_65.png');}
+54.6%,56.7%{background-image: url('../img/images/shiam_66.png');}
+56.7%,58.800000000000004%{background-image: url('../img/images/shiam_67.png');}
+58.800000000000004%,60.900000000000006%{background-image: url('../img/images/shiam_68.png');}
+60.900000000000006%,63.0%{background-image: url('../img/images/shiam_69.png');}
+63.0%,65.10000000000001%{background-image: url('../img/images/shiam_70.png');}
+65.10000000000001%,67.2%{background-image: url('../img/images/shiam_71.png');}
+67.2%,69.3%{background-image: url('../img/images/shiam_85.png');}
+69.3%,71.4%{background-image: url('../img/images/shiam_86.png');}
+71.4%,73.5%{background-image: url('../img/images/shiam_87.png');}
+73.5%,75.60000000000001%{background-image: url('../img/images/shiam_88.png');}
+75.60000000000001%,77.7%{background-image: url('../img/images/shiam_89.png');}
+77.7%,79.8%{background-image: url('../img/images/shiam_90.png');}
+79.8%,81.9%{background-image: url('../img/images/shiam_91.png');}
+81.9%,84.0%{background-image: url('../img/images/shiam_92.png');}
+84.0%,86.10000000000001%{background-image: url('../img/images/shiam_93.png');}
+86.10000000000001%,88.2%{background-image: url('../img/images/shiam_94.png');}
+88.2%,90.3%{background-image: url('../img/images/shiam_95.png');}
+90.3%,92.4%{background-image: url('../img/images/shiam_109.png');}
+92.4%,94.5%{background-image: url('../img/images/shiam_110.png');}
+94.5%,99.60000000000001%{background-image: url('../img/images/shiam_111.png');}
+}
