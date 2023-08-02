@@ -127,6 +127,15 @@
 			}
 			#imgbar{
 				top: 0px;
+				animation: sco 20000ms linear 1000ms infinite alternate;
+			}
+			@keyframes sco {
+				from{
+					transform: translateX(0);
+				}
+				to{
+					transform: translateX(-100%);
+				}
 			}
 			#imgbar:hover{
 				top: -50px;
@@ -156,7 +165,7 @@
 			<div class="menu" id=menu1 >
 				<div style="height: 50px;width: 100px;text-align: center;">首页</div>
 				<div class="menuItem">
-					<a >体验</a>
+					<a href="game.html">体验</a>
 				</div>
 				<div class="menuItem">
 					<a>待定</a>
@@ -204,6 +213,8 @@
 			<img src="../img/合影4.jpg" class="headimg" draggable="false"/>
 			<img src="../img/day1-news-4.jpg" class="headimg" draggable="false"/>
 			<img src="../img/day1-news-3.jpg" class="headimg" draggable="false"/>
+			<img src="../img/7_20_2.jpg" class="headimg" draggable="false"/>
+			<img src="../img/day1-news-3.jpg" class="headimg" draggable="false"/>
 		</div>
 		
 		<div class="container">
@@ -220,6 +231,25 @@
 		var px=0;
 		var isclick=false;
 		var dx=0;
+		var imgs=[
+			"../img/7_20_1.jpg",
+			"../img/7_20_2.jpg",
+			"../img/7_20_3.jpg",
+			"../img/7_20_4.jpg",
+			"../img/7_20_5.jpg",
+			"../img/7_20_6.jpg",
+			"../img/7_20_7.jpg",
+			"../img/7_20_8.jpg",
+		];
+		imgs.forEach((i)=>{
+			var img=document.createElement('img');
+			img.src=i;
+			img.className="headimg";
+			img.draggable=false;
+			
+			imgbar.append(img);
+		});
+		imgbar.style.width=700*imgs.length+"px";
 		imgbar.addEventListener('mousedown',(ev)=>{
 			px=ev.pageX;
 			isclick=true;
@@ -239,6 +269,16 @@
 			imgbar.style.transform="translateX("+(Number(imgbar.style.transform.replace("translateX(",'').replace("px)",''))
 			+ev.movementX)+"px)";
 		})
+		function update(){
+			if(isclick){
+				imgbar.style.animationPlayState="paused";
+			}
+			else{
+				imgbar.style.animationPlayState="running";
+			}
+			requestAnimationFrame(update);
+		}
+		requestAnimationFrame(update);
 		/*
 		for(let i=0;i<headimg.length;i++){
 			(function(i){

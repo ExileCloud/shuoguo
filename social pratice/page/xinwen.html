@@ -12,13 +12,28 @@
 				text-decoration: none;
 				
 			}
+			.lon{
+				color: #008ed5;
+				transition: all 600ms;
+			}
+			.lon:hover{
+				filter: brightness(1.2);
+				cursor: pointer;
+				text-decoration: underline;
+			}
 			#robar{
 				position: relative;
 				transition: all 500ms;
 				left: 0px;
 			}
 			#newsbar{
-				
+				position: absolute;
+				left: 900px;
+				top: 150px;
+				width: 500px;
+				height: 400px;
+				background-color: aliceblue;
+				animation: tol 1200ms ease-out 100ms 1 forwards;
 			}
 			.texta{
 				filter: brightness(0.5);
@@ -49,6 +64,7 @@
 				top: 100px;
 				left: 40px;
 				background-color: antiquewhite;
+				animation: tor 1200ms ease-in 100ms 1 forwards;
 			}
 			.pic{
 				overflow: hidden;
@@ -93,6 +109,22 @@
 			.imga:hover > div{
 				top: -50px;
 			}
+			@keyframes tor {
+				from{
+					transform: translateX(-800px);
+				}
+				to{
+					transform: translateX(0px);
+				}
+			}
+			@keyframes tol {
+				from{
+					transform: translateX(600px);
+				}
+				to{
+					transform: translateX(0px);
+				}
+			}
 			@keyframes Out{
 				from{
 					transform: translateY(-80px);
@@ -104,8 +136,27 @@
 			.ldiv{
 				display: inline-block;
 			}
+			div li{
+				margin-top: 10px;
+				transition: all 500ms;
+				list-style-type: circle;
+				//list-style-image: radial-gradient(white,black);
+			}
+			div li:hover{
+				filter: brightness(1.2);
+				background-image: linear-gradient(grey,white,white,white,grey);
+			}
+			li a{
+				font-size: 16px;
+				transition: all 500ms;
+			}
+			li a:hover{
+				color: dodgerblue;
+				cursor: pointer;
+			}
 		</style>
 	</head>
+	<script src="../js/support_news.js"></script>
 	<body>
 		<div id=daohang>
 			<div class="ldiv" style="width: 60px;height:60px;background-color: cornflowerblue;
@@ -129,23 +180,52 @@
 				</div>
 			</span>
 		</div>
-		<div class="swip-wrap">
-			<div id=robar>
+		<div class="swip-wrap" style="background-image: url('../img/newsbg1.png');max-width: 750px;">
+			<div id=robar >
 			</div>
 		</div>
 		<div id=newsbar >
-			<div style="position: relative;">
-				
+			<div style="position: relative;background-color:#008ed5;">
+				<span style="font-size: 20px;color: white;position: relative;left: 40px;">新闻导航</span>
+				<span style="position: relative;left: 378px;">
+					<a>更多</a>
+				</span>
+			</div>
+			<div style="width: 98%;height: 92%;position: relative;left: 1%;background-color: white;">
+				<li >
+					<a class="news-part" onclick="fillcontent(0)">硕果长鲜小队首日访谈顺利开展</a>
+				</li>
+				<li >
+					<a class="news-part" onclick="fillcontent(1)">硕果长鲜小队首日访谈顺利开展</a>
+				</li>
+				<li >
+					<a class="news-part" onclick="fillcontent(2)">硕果长鲜小队首日访谈顺利开展</a>
+				</li>
+				<li >
+					<a class="news-part" onclick="fillcontent(3)">硕果长鲜小队首日访谈顺利开展</a>
+				</li>
+				<li >
+					<a class="news-part" onclick="fillcontent(4)">硕果长鲜小队首日访谈顺利开展</a>
+				</li>
+				<li >
+					<a class="news-part" onclick="fillcontent(5)">硕果长鲜小队首日访谈顺利开展</a>
+				</li>
+				<li >
+					<a class="news-part" onclick="fillcontent(6)">硕果长鲜小队首日访谈顺利开展</a>
+				</li>
+				<li >
+					<a class="news-part" onclick="fillcontent(7)">硕果长鲜小队首日访谈顺利开展</a>
+				</li>
+				<li >
+					<a class="news-part" onclick="fillcontent(8)">硕果长鲜小队首日访谈顺利开展</a>
+				</li>
+				<li >
+					<a class="news-part" onclick="fillcontent(9)">硕果长鲜小队首日访谈顺利开展</a>
+				</li>
 			</div>
 		</div>
 	</body>
 	<script>
-		function getData(url){
-			var request=new XMLHttpRequest();
-			request.open('get',url,false);
-			request.send(null);
-			return JSON.parse(request.responseText);
-		}	
 		var bar=document.getElementById('robar');
 		bar.style.height="500px";
 		var data=getData("../ShuJu/wechat.json").site;
@@ -170,7 +250,6 @@
 			pdiv.append(pa);
 			bar.append(pdiv);
 		}
-		
 		bar.style.width=750*document.getElementsByClassName('pic').length+"px";
 		var t1= setInterval(()=>{
 			if(bar.offsetLeft<=(-1*bar.offsetWidth+750)){
@@ -181,5 +260,10 @@
 			bar.style.left=bar.offsetLeft-750+"px";
 				}
 		},1000);
+		var datas=getData("../ShuJu/news.json").data;
+		var lis=document.getElementsByClassName('news-part');
+		for(var i=0;i<lis.length;i++){
+			lis[i].innerHTML=datas[i].title;
+		}
 	</script>
 </html>
