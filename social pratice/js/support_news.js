@@ -6,7 +6,8 @@
 		}
 		function fillcontent(i){
 			//清空body---clear body
-			document.body.innerHTML='';
+			//document.body.innerHTML='';
+			document.getElementById("part1").innerHTML="";
 			//准备元素---
 				//预添加元素列表
 			var els=[];
@@ -46,7 +47,7 @@
 					var data=getData("../ShuJu/news.json").data;
 			console.log(data);
 			let frame=document.createElement('div');
-			frame.style="background-color: aliceblue;width: 900px;margin-left: 60px;height: fit-content;display: block;";
+			frame.style="background-color: aliceblue;width: 900px;margin-left: 20px;height: fit-content;display: block;";
 			let databar=document.createElement('div');
 			databar.style="margin-left: 30px;";
 			let title=document.createElement('h2');
@@ -103,8 +104,35 @@
 			da.innerHTML="下一条："+data[i+1].title;
 			frame.append(da);
 			els.push(frame);
+			
+			var newbar=document.createElement('div');
+			newbar.id="newsbar";
+			newbar.style.width="400px";
+			newbar.style.left="1000px";
+			var s=document.createElement('div');
+			s.style="position: relative;background-color:#008ed5;";
+			
+			var sp1=document.createElement('span');
+			var sp2=document.createElement('span');
+			var sp2_a=document.createElement('a');
+			sp1.style="font-size: 20px;color: white;position: relative;left: 40px;";
+			sp1.innerHTML="新闻导航";
+			sp2.style="position: relative;left: 378px;"
+			sp2_a.innerHTML="更多";
+			s.append(sp1);
+			sp2.append(sp2_a);
+			s.append(sp2);
+			newbar.append(s);
+			//els.push(newbar);
 			els.forEach((e)=>{
-				document.body.append(e);
+				//document.body.append(e);
+				document.getElementById('part1').append(e);
 			})
 			scrollTo(0,0);
+			var newsb = document.getElementById('newsbar');
+			newsb.style.animationDuration="600ms";
+			newsb.style.animation="none";
+			void newsb.offsetHeight;
+			newsb.style.animation=null;
+			
 		}
