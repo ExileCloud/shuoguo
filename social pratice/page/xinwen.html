@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html style="width: 100%;">
 	<head>
 		<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<title>今日新闻</title>
 		<style>
 			body{
+				width: 100%;
 				user-select: none;
+				overflow-x: hidden;
 			}
 			a{
 				color:inherit;
@@ -28,10 +30,19 @@
 			}
 			#newsbar{
 				position: absolute;
-				left: 980px;
-				top: 150px;
-				width: 420px;
-				height: 400px;
+				left: 61.25rem;
+				top: 9.375rem;
+				width: 26.25rem;
+				height: 25rem;
+				background-color: aliceblue;
+				animation: tol 1200ms ease-out 100ms 1 forwards;
+			}
+			#newsbar1{
+				position: absolute;
+				left: 61.25rem;
+				top: 9.375rem;
+				width: 26.25rem;
+				height: 25rem;
 				background-color: aliceblue;
 				animation: tol 1200ms ease-out 100ms 1 forwards;
 			}
@@ -45,24 +56,24 @@
 				position: fixed;
 				left: 0;
 				top: 0;
-				width: 1450px;
+				width: 90.625rem;
 				box-sizing: content-box;
-				height: 100px;
+				height: 6.25rem;
 				margin: 0;
 				padding: 0;
 				border: black 0.5px solid;
 				background-image: linear-gradient(to bottom,white,#dedede,white);
 				animation: Out 800ms ease-out 100ms 1 forwards;
-				transform: translateY(-80px);
+				transform: translateY(-5rem);
 				z-index: 10;
 			}
 			.swip-wrap{
 				overflow: hidden;
-				width: 750px;
-				height: 500px;
+				width: 46.875rem;
+				height: 31.25rem;
 				position: relative;
-				top: 100px;
-				left: 40px;
+				top: 6.25rem;
+				left: 2.5rem;
 				background-color: antiquewhite;
 				animation: tor 1200ms ease-in 100ms 1 forwards;
 			}
@@ -70,35 +81,35 @@
 				overflow: hidden;
 				display: inline-block;
 				float: left;
-				width: 750px;
-				height: 500px;
+				width: 46.875rem;
+				height: 31.25rem;
 				margin: 0;
 				padding: 0;
 			}
 			.picimg{
 				position: relative;
-				min-height: 500px;
-				max-height: 500px;
+				min-height: 31.25rem;
+				max-height: 31.25rem;
 				||clip-path:polygon(0 0px,750px 0px,375px 500px);
 				text-align: center;
 				transition: all 500ms;
 			}
 			.imga{
 				text-align: center;
-				max-width: 750px;
-				max-height: 500px;
+				max-width: 46.875rem;
+				max-height: 31.25rem;
 				overflow: hidden;
 			}
 			.imga div{
 				color: white;
-				font-size: 16px;
+				font-size: 1rem;
 				position: relative;
-				width: 750px;
-				height: 50px;
+				width: 46.875rem;
+				height: 3.125rem;
 				transition: all 500ms;
 				background-color: rgba(1,2,3,0.6);
 				top: 0px;
-				line-height: 40px;
+				line-height: 2.5rem;
 				text-align: center;
 				align-content: center;
 			}
@@ -107,11 +118,11 @@
 				filter: brightness(0.8);
 			}
 			.imga:hover > div{
-				top: -50px;
+				top: -3.125rem;
 			}
 			@keyframes tor {
 				from{
-					transform: translateX(-800px);
+					transform: translateX(-50rem);
 				}
 				to{
 					transform: translateX(0px);
@@ -119,7 +130,7 @@
 			}
 			@keyframes tol {
 				from{
-					transform: translateX(600px);
+					transform: translateX(37.5rem);
 				}
 				to{
 					transform: translateX(0px);
@@ -127,7 +138,7 @@
 			}
 			@keyframes Out{
 				from{
-					transform: translateY(-80px);
+					transform: translateY(-5rem);
 				}
 				to{
 					transform: translateY(0);
@@ -137,7 +148,7 @@
 				display: inline-block;
 			}
 			div li{
-				margin-top: 10px;
+				margin-top: 0.625rem;
 				transition: all 500ms;
 				list-style-type: circle;
 				//list-style-image: radial-gradient(white,black);
@@ -147,12 +158,64 @@
 				background-image: linear-gradient(grey,white,white,white,grey);
 			}
 			li a{
-				font-size: 16px;
+				font-size: 1rem;
 				transition: all 500ms;
 			}
 			li a:hover{
 				color: dodgerblue;
 				cursor: pointer;
+			}
+			#comment{
+				
+				display: inline;
+			}
+			#frame1{
+				width: 900px;margin-left: 20px;
+			}
+			p img{
+				max-width: 800px;
+			}
+			@media screen and (max-width:1000px) {
+				#newsbar{
+					position: absolute;
+					left: 12.25rem;
+					top: 40.375rem;
+					width: 26.25rem;
+					height: 25rem;
+					background-color: aliceblue;
+					//animation: tol 1200ms ease-out 100ms 1 forwards;
+				}		
+				#newsbar1{
+					position: absolute;
+					left: 52.25rem;
+					top: 40.375rem;
+					width: 26.25rem;
+					height: 25rem;
+					background-color: aliceblue;
+					display: none;
+					
+					//animation: tol 1200ms ease-out 100ms 1 forwards;
+				}
+				#newsbar1:hover{
+					left:12.25px;
+				}
+
+				.swip-wrap{
+					overflow: hidden;
+					width: 36.875rem;
+					height: 31.25rem;
+					position: relative;
+					top: 6.25rem;
+					left: 0.5rem;
+					background-color: antiquewhite;
+					animation: tor 1200ms ease-in 100ms 1 forwards;
+				}
+				#frame1{
+					width: 550px;margin-left: 0px;
+				}
+				p img{
+					max-width: 530px;
+				}
 			}
 		</style>
 	</head>
@@ -181,16 +244,16 @@
 				</div>
 			</span>
 		</div>
-		<div class="swip-wrap" style="max-width: 750px;">
+		<div class="swip-wrap" style="max-width: 46.875rem;">
 			<div id=robar >
 			</div>
 		</div>
 		</div>
-		<div part2>
+		<div part2 style="display: block;">
 		<div id=newsbar >
 			<div style="position: relative;background-color:#008ed5;">
 				<span style="font-size: 20px;color: white;position: relative;left: 40px;">新闻导航</span>
-				<span style="position: relative;left: 378px;">
+				<span style="position: relative;left: 280px;">
 					<a>更多</a>
 				</span>
 			</div>
@@ -211,22 +274,30 @@
 					<a class="news-part" onclick="fillcontent(4)">硕果长鲜小队首日访谈顺利开展</a>
 				</li>
 				<li >
-					<a class="news-part" onclick="fillcontent(5)">硕果长鲜小队首日访谈顺利开展</a>
+					<a class="news-part" onclick="fillcontent(5)"> </a>
 				</li>
 				<li >
-					<a class="news-part" onclick="fillcontent(6)">硕果长鲜小队首日访谈顺利开展</a>
+					<a class="news-part" onclick="fillcontent(6)"> </a>
 				</li>
 				<li >
-					<a class="news-part" onclick="fillcontent(7)">硕果长鲜小队首日访谈顺利开展</a>
+					<a class="news-part" onclick="fillcontent(7)"> </a>
 				</li>
 				<li >
-					<a class="news-part" onclick="fillcontent(8)">硕果长鲜小队首日访谈顺利开展</a>
+					<a class="news-part" onclick="fillcontent(8)"> </a>
 				</li>
 				<li >
-					<a class="news-part" onclick="fillcontent(9)">硕果长鲜小队首日访谈顺利开展</a>
+					<a class="news-part" onclick="fillcontent(9)"> </a>
 				</li>
 			</div>
 		</div>
+		</div>
+		<div id=comment style="display: none;">
+			<textarea id=textqu style="width: 20rem;">
+				
+			</textarea>
+			<button onclick="sendit()">
+				发送评论
+			</button>
 		</div>
 	</body>
 	<script>
@@ -278,8 +349,47 @@
 		},1000);
 		var datas=getData("../ShuJu/news.json").data;
 		var lis=document.getElementsByClassName('news-part');
-		for(var i=0;i<lis.length;i++){
+		for(var i=0;i<lis.length-5;i++){
+			
 			lis[i].innerHTML=datas[i].title;
 		}
-	</script>
+		
+		function getLocation()
+		  {
+		  if (navigator.geolocation)
+			{
+			navigator.geolocation.
+		getCurrentPosition(showPosition)
+		;
+			}
+		  else{x.innerHTML="Geolocation is not supported by this browser.";}
+		  }
+		function showPosition(position)
+		  {
+		  confirm("Latitude: " + position.coords.latitude +
+		  "<br />Longitude: " + position.coords.longitude);
+		  }
+		function showError(error)
+		  {
+		  switch(error.code)
+		    {
+		    case error.PERMISSION_DENIED:
+		      x.innerHTML="User denied the request for Geolocation."
+		      break;
+		    case error.POSITION_UNAVAILABLE:
+		      x.innerHTML="Location information is unavailable."
+		      break;
+		    case error.TIMEOUT:
+		      x.innerHTML="The request to get user location timed out."
+		      break;
+		    case error.UNKNOWN_ERROR:
+		      x.innerHTML="An unknown error occurred."
+		      break;
+		    }
+		  }
+		function sendit(){
+			getLocation();
+			console.log(document.getElementById('textqu').value);
+		}
+</script>
 </html>

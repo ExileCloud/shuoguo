@@ -47,7 +47,8 @@
 					var data=getData("../ShuJu/news.json").data;
 			console.log(data);
 			let frame=document.createElement('div');
-			frame.style="background-color: aliceblue;width: 900px;margin-left: 20px;height: fit-content;display: block;";
+			frame.id="frame1";
+			frame.style="background-color: aliceblue;height: fit-content;display: block;";
 			let databar=document.createElement('div');
 			databar.style="margin-left: 30px;";
 			let title=document.createElement('h2');
@@ -77,7 +78,7 @@
 				}
 				else{
 					let img=document.createElement('img');
-					img.style="max-width: 800px";
+					//img.style="max-width: 800px";
 					img.draggable=false;
 					img.src=data[i].content[h];
 					p.appendChild(img);
@@ -106,7 +107,7 @@
 			els.push(frame);
 			
 			var newbar=document.createElement('div');
-			newbar.id="newsbar";
+			newbar.id="newsbar1";
 			newbar.style.width="400px";
 			newbar.style.left="1000px";
 			var s=document.createElement('div');
@@ -123,6 +124,8 @@
 			sp2.append(sp2_a);
 			s.append(sp2);
 			newbar.append(s);
+			if(document.getElementById('newsbar'))
+			document.getElementById('newsbar').id="newsbar1";
 			//els.push(newbar);
 			els.forEach((e)=>{
 				//document.body.append(e);
