@@ -19,6 +19,7 @@
 				transition: filter 900ms ease;
 				transition: left 100ms ease;
 				transition: top 50ms linear;
+				animation-play-state: paused;
 			}
 			#kejikuang1 img{
 				animation: shan1 2000ms ease 100ms infinite alternate;
@@ -58,14 +59,14 @@
 		<div id=dian style="position: absolute;width: 256.8px;height: 222.4px;left: 0;top: 0;" draggable="false">
 			
 		</div>
-		<div class="Tdiv" draggable="false">
+		<div class="Tdiv" draggable="false" style="display: none;">
 			<img class="biao" style="position: relative;left: -0.25rem;top: 5.4rem;display: block;" src="../img/kejibiao.png"/>
 			<img class="biao" style="position: relative;left: -0.25rem;top: 5.8rem;display: block;" src="../img/kejibiao.png"/>
 			<img class="biao" style="position: relative;left: -0.25rem;top: 6.2rem;display: block;" src="../img/kejibiao.png"/>
 			<img class="biao" style="position: relative;left: -0.25rem;top: 6.6rem;display: block;" src="../img/kejibiao.png"/>
 			<img class="biao" style="position: relative;left: -0.25rem;top: 7rem;display: block;" src="../img/kejibiao.png"/>
 			<div id=kejikuang1 style="width: 100;height: 100%;" draggable="false">
-				<img draggable="false" src="../img/kejikuang1.png" style="max-height: 10rem;"/>
+				<img draggable="false" src="../img/kejikuang1.png" style="max-height: 10rem;" alt="加载中"/>
 				<div class="nei" style="position: relative;top: -9.5rem;left: 1.2rem;"></div>
 			</div>
 			<div style="width: 8rem;height: 1.5rem;
@@ -74,14 +75,23 @@
 			">
 			<p style="font-size: 0.5rem;color: aliceblue;position: relative;text-align: center;line-height: 0.1rem;">产品：智能保鲜垫</p>
 			</div>
-			<img draggable="false"
+			<img onload="light()" draggable="false"
 			src="https://exilecloud.github.io/shuoguo/social%20pratice/img/%E5%9E%AB%E5%AD%90.png" 
 			style="max-height: 9rem;position: relative;top:-11.2rem;left:2rem;z-index: -10;" draggable="false"/>
+			<div style="position: relative;top: -100%;background-color: aliceblue;">
+				<p style="color: blueviolet;background-image: linear-gradient(to bottom,rgba(0,237,255,0.05),rgba(0,237,255,0.8),rgba(0,237,255,0.9));">
+					产品使用静电纺丝技术和热交联技术，以PLA，PVA，PVP为原料做出了三层结构的纳米材料吸水垫，最上最下两层是疏水性的PLA纳米纤维，上层较簿，方便透水，中间为亲水性多孔纳米材料，用于吸收水分，释放杀菌物质，。下层PLA纳米纤维较厚 阻隔中间吸水层的水分浸湿包装。
+				</p>
+			</div>
 		</div>
 		
 	</body>
 	<script>
-
+		document.getElementsByClassName('Tdiv')[0].style.filter="gtayscale(1)";
+		function light(){
+			document.getElementsByClassName('Tdiv')[0].style.filter="gtayscale(0)";
+			document.getElementsByClassName('Tdiv')[0].style.animationPlayState="running";
+		}
 		var isdown=false;
 		var dian=document.getElementById("dian");
 		function dra(dian){
@@ -126,6 +136,7 @@
 			});
 			dian.addEventListener('touchend',(ev)=>{
 				isdown=false;
+				
 			})
 			dian.addEventListener('touchcancel',(ev)=>{
 				isdown=false;
@@ -133,5 +144,8 @@
 		}
 		dra(dian);
 		dra(document.getElementsByClassName('Tdiv')[0]);
+		document.getElementsByClassName('Tdiv')[0].style.left=document.body.offsetWidth/2-156+"px";
+		document.getElementsByClassName('Tdiv')[0].style.top=document.body.offsetHeight/2+"px";
+		document.getElementsByClassName('Tdiv')[0].style.display="inherit";
 	</script>
 </html>
